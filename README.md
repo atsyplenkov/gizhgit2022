@@ -1,3 +1,5 @@
+Repository structure
+```
 +-- data
 |   +-- dem
 |   |   +-- giz_2021_dem_1m.sgrd # DEM in SAGA format
@@ -16,3 +18,4 @@
 \-- R
     +-- 01_dem-preparation.R
     \-- 02_ls-calculation.R
+```
