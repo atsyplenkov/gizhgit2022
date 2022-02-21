@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_METADATA>
+  <HISTORY saga-version="2.3.1">
+    <MODULE library="ta_preprocessor" id="4" name="Fill Sinks (Wang &amp; Liu)">
+      <OPTION type="grid_system" id="PARAMETERS_GRID_SYSTEM" name="Grid system">
+        <CELLSIZE>1</CELLSIZE>
+        <XMIN>336531.2654</XMIN>
+        <XMAX>339907.2654</XMAX>
+        <YMIN>4814093.5059</YMIN>
+        <YMAX>4817675.5059</YMAX>
+      </OPTION>
+      <OPTION type="double" id="MINSLOPE" name="Minimum Slope [Degree]">0.100000</OPTION>
+      <INPUT type="grid" id="ELEV" name="DEM" system="PARAMETERS_GRID_SYSTEM">
+        <MODULE library="grid_filter" id="0" name="Simple Filter">
+          <OPTION type="grid_system" id="PARAMETERS_GRID_SYSTEM" name="Grid system">
+            <CELLSIZE>1</CELLSIZE>
+            <XMIN>336531.2654</XMIN>
+            <XMAX>339907.2654</XMAX>
+            <YMIN>4814093.5059</YMIN>
+            <YMAX>4817675.5059</YMAX>
+          </OPTION>
+          <OPTION type="choice" id="METHOD" name="Filter" index="0">Smooth</OPTION>
+          <OPTION type="choice" id="MODE" name="Search Mode" index="0">Square</OPTION>
+          <OPTION type="integer" id="RADIUS" name="Radius">5</OPTION>
+          <INPUT type="grid" id="INPUT" name="Grid" system="PARAMETERS_GRID_SYSTEM">
+            <FILE>C:/Users/atsyp/YandexDisk/GIT/gizhgit2022/data/dem/giz_2021_dem_1m.sgrd</FILE>
+          </INPUT>
+          <OUTPUT type="grid" id="RESULT" name="Filtered Grid">giz_2021_dem_1m [Filter]</OUTPUT>
+        </MODULE>
+      </INPUT>
+      <OUTPUT type="grid" id="FILLED" name="Filled DEM">giz_2021_dem_r5 [no sinks]</OUTPUT>
+    </MODULE>
+  </HISTORY>
+  <SOURCE>
+    <FILE>C:\Users\atsyp\YandexDisk\GIT\gizhgit2022\data\dem\giz_2021_dem_r5-f.sgrd</FILE>
+    <DATABASE></DATABASE>
+    <PROJECTION>
+      <OGC_WKT>PROJCS["WGS_1984_UTM_Zone_38N",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",500000.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",45.0],PARAMETER["Scale_Factor",0.9996],PARAMETER["Latitude_Of_Origin",0.0],UNIT["Meter",1.0]]
+</OGC_WKT>
+      <PROJ4>+proj=tmerc +a=6378137.000000 +b=6356752.314245 +x_0=500000.0 +y_0=0.0 +lon_0=45.0 +k_0=0.9996 +lat_0=0.0 +no_defs</PROJ4>
+      <EPSG>-1</EPSG>
+    </PROJECTION>
+  </SOURCE>
+  <DESCRIPTION></DESCRIPTION>
+</SAGA_METADATA>
